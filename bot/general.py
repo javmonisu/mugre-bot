@@ -1,9 +1,31 @@
+"""
+Classes for reading & writing to the database.
+"""
 from database.mongo import db
 from random import choice
 
 
 def empty_command(text):
     return text.strip().find(' ')
+
+
+def help():
+    text = ('Usa /comando@TheMugrestBot para que funcione correctamente.\n\n'
+            '/start - Saludo\n'
+            '/eccel - Muestro el eccelmovil\n'
+            '/addeccel - addeccel (texto) para añadir una entrada\n'
+            '/dice - (número) Lanzo un dado de (número) caras, por defecto 6\n'
+            '/doggo - Cito a los doggerfags\n'
+            '/adddoggo - Te añado a la lista de doggerfags\n'
+            '/deldoggo - Te borro de la lista de doggerfags\n'
+            '/dylanface - Dylanface\n'
+            '/google - (texto) Busco (texto) en google. Tambien funciona citando\n'
+            '/gif - Envía un gif aleatorio\n'
+            '/animally - Muestro un tocho milenario\n'
+            '/kirigiri - Me siento como…\n'
+            '/help - Muestra la ayuda\n'
+    )
+    return text
 
 
 class Excel:

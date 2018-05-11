@@ -1,14 +1,15 @@
+"""
+Bot message handlers.
+"""
 from random import randint
 from bot.polling import Bot
-from bot.general import Gif, Dog, Excel, empty_command, long_text
-import logging
-
-logging.basicConfig(level='DEBUG')
+from bot.general import Gif, Dog, Excel, empty_command, long_text, help
+from os import environ
 
 # Bot TOKEN
 creator = 8143995
-TOKEN = '553127952:AAH7mVZR-WT5EvtL-4rkh1iAVZjPQqMdw5I'
-bot = Bot(TOKEN)
+token = environ['BOT_TOKEN']
+bot = Bot(token)
 
 
 @bot.message_handler(commands=['start'])
@@ -16,6 +17,13 @@ def send_welcome(message):
     chat_id = message.chat.id
     username = message.from_user.first_name
     text = 'Hola {}. Escribe /help para conocer más.'.format(username)
+    bot.send_message(chat_id, text)
+
+
+@bot.message_handler(commands=['help'])
+def send_welcome(message):
+    chat_id = message.chat.id
+    text = help()
     bot.send_message(chat_id, text)
 
 
@@ -92,8 +100,8 @@ def get_doggo(message):
 def kirigiri(message):
     chat_id = message.chat.id
     username = message.from_user.username
-    text = '@{} se siente como <b>kirigiri</b>.'.format(username, parse_mode='HTML')
-    bot.send_message(chat_id, text)
+    text = '@{} se siente como <b>kirigiri</b>.'.format(username)
+    bot.send_message(chat_id, text, parse_mode='HTML')
 
 
 @bot.message_handler(commands=['gif'])
@@ -161,13 +169,19 @@ def animally(message):
     text = long_text()
     bot.send_message(chat_id, text)
 
-## Habra que cambiarlo justo antes de entrar en "prod".
+
 @bot.message_handler(commands=['dylanface'])
-#@bot.message_handler(content_types=['photo'])
 def dylanface(message):
     chat_id = message.chat.id
-    bot.send_message(chat_id, message.text)
-    #dylanface = 'AgADBAADAqwxGyrwqFNGZtpQAy0qOSR1iRoABCnJai5PIA3wImgFAAEC'
-    #bot.send_photo(chat_id, photo = dylanface)
-    #bot.send_message(chat_id, message.photo)
+    dylanface = 'AgADBAADIKwxG32FgFPwhkJH30Am6F21mxoABMBX6pXwx8iH7nIBAAEC'
+    bot.send_photo(chat_id, photo=dylanface)
+
+
+# To add hardcoded images as /dylanface
+#@bot.message_handler(content_types='photo')
+@bot.message_handler(commands=['addimage'])
+def read_image(message):
+    chat_id = message.chat.id
+    if chat_id == creator:
+        bot.send_message(chat_id, message.photo)
 

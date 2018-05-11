@@ -1,4 +1,7 @@
-# Database config information set in environmental variables
+"""
+Database configuration.
+Server information set via envioremental variables.
+"""
 from os import environ
 from pymongo import MongoClient
 
@@ -35,7 +38,8 @@ class Database:
 
     @property
     def gifs(self):
-        return self.connection['gif']
+        return self.connection['gifs']
+
 
 # Database initialization, exceptions will by raised by PyMongo
 db = Database()
