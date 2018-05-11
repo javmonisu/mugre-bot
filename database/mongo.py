@@ -35,7 +35,7 @@ class Database:
 
     @property
     def gifs(self):
-        return self.connection['gifs']
+        return self.connection['gif']
 
-
+# Database initialization, exceptions will by raised by PyMongo
 db = Database()
