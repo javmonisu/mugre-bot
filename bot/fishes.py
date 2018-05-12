@@ -11,7 +11,9 @@ def fishes():
     date_actual = str(date.today().day) + '-' + str(date.today().month) + '-' + str(date.today().year)
     date_minus = str(date.today().day-5) + '-' + str(date.today().month) + '-' + str(date.today().year)
     try:
-        choices = ['SALMON', 'BACALAO', 'LUBINA', 'GAMBA', 'CALAMAR', 'BONITO', 'ALMEJA']
+        choices = ['SALMON', 'BACALAO', 'LUBINA', 'GAMBA', 'CALAMAR',
+                   'BONITO', 'ALMEJA', 'ATUN', 'CABALLA', 'PEZ ESPADA',
+                   'PERCEBE']
         response = requests.post('http://www.mercamadrid.es/wp-admin/admin-ajax.php?', data={
             'action': 'mercamadrir_filter_products',
             'market': 'PESCADOS',
