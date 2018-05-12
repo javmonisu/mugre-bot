@@ -1,0 +1,13 @@
+sudo: required
+
+language: ruby
+
+services:
+  - docker
+  
+before_script:
+- docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+
+script:
+- docker build -t eltrolado/mugre-bot:latest .
+- docker push eltrolado/mugre-bot:latest
