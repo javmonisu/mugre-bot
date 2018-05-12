@@ -30,3 +30,18 @@ export BOT_TOKEN=''
 ```
 
 Export the file to set the variables and run the run.py file.
+
+
+# DOCKER
+
+Build the docker image
+
+```
+docker build -t eltrolado/mugre-bot .
+```
+
+Run the docker image
+
+```
+docker run -ti -e MONGO_HOST='' -e MONGO_PORT='' -e MONGO_USERNAME='' -e MONGO_PASSWORD='' -e MONGO_DATABASE='' -e BOT_TOKEN='' eltrolado/mugre-bot 
+```
