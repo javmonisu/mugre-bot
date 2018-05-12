@@ -6,4 +6,4 @@ A fancy telegram bot.
 
 ## Basic information
 
-Bot created using pyTelegramBotAPI connected to a database in Mongo.`
+Bot created using pyTelegramBotAPI connected to a database in Mongo.
