@@ -7,3 +7,17 @@ A fancy telegram bot.
 ## Basic information
 
 Bot created using pyTelegramBotAPI connected to a database in Mongo.
+
+## Getting Started
+
+Set your environment variables in the .env file.
+
+```export MONGO_HOST='178.62.217.132'
+export MONGO_PORT=''
+export MONGO_USERNAME=''
+export MONGO_PASSWORD=''
+export MONGO_DATABASE=''
+export BOT_TOKEN=''```
+
+Export the file and run the run.py file.
+
