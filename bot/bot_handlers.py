@@ -4,6 +4,7 @@ Bot message handlers.
 from random import randint
 from bot.polling import Bot
 from bot.general import Gif, Dog, Excel, empty_command, long_text, help
+from bot.fishes import fishes
 from os import environ
 
 # Bot TOKEN
@@ -196,4 +197,11 @@ def read_image(message):
     chat_id = message.chat.id
     if chat_id == creator:
         bot.send_message(chat_id, message.photo)
+
+
+@bot.message_handler(commands=['pescado'])
+def read_image(message):
+    chat_id = message.chat.id
+    text = fishes()
+    bot.send_message(chat_id, text, parse_mode='HTML')
 
