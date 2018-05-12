@@ -15,7 +15,7 @@ Bot created using pyTelegramBotAPI connected to a database in Mongo.
 Install the requeriments:
 
 ```
-pip3 install -r requeriments
+pip3 install -r requeriments.txt
 ```
 
 Set your environment variables in the .env file.
