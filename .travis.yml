@@ -6,4 +6,4 @@ services:
   - docker
 
 script:
-- docker build treezio/mugre-bot:latest .
+- docker build -t treezio/mugre-bot:latest .
