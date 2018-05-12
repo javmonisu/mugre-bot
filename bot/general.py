@@ -20,6 +20,7 @@ def help():
             '/deldoggo - Te borro de la lista de doggerfags\n'
             '/dylanface - Dylanface\n'
             '/google - (texto) Busco (texto) en google. También funciona citando\n'
+            '/word - (texto) link a la palabra en WR. Por defecto palabra aleatoria\n'
             '/gif - Envía un gif aleatorio\n'
             '/animally - Muestro un tocho milenario\n'
             '/kirigiri - Me siento como…\n'

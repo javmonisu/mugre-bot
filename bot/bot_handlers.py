@@ -163,6 +163,18 @@ def google(message):
         bot.send_message(chat_id, text_to_search, disable_web_page_preview=True)
 
 
+@bot.message_handler(commands=['word'])
+def word(message):
+    chat_id = message.chat.id
+    word = 'http://www.wordreference.com/es/translation.asp?tranword='
+    space = empty_command(message.text)
+    if space > 0:
+        text_to_search = word + message.text[space + 1:].strip().replace(',', ' ').strip().replace(' ', '+').strip()
+    else:
+        text_to_search = 'http://www.wordreference.com/random/enes'
+    bot.send_message(chat_id, text_to_search, disable_web_page_preview=True)
+
+
 @bot.message_handler(commands=['animally'])
 def animally(message):
     chat_id = message.chat.id
