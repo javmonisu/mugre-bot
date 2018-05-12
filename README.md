@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/dmonter/mugre-bot.svg?branch=master)](https://travis-ci.com/dmonter/mugre-bot)
+[![Build Status](https://travis-ci.org/dmonter/mugre-bot.svg?branch=master)](https://travis-ci.org/dmonter/mugre-bot)
 
 # @TheMugrestBot
 
