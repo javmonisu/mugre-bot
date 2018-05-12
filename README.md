@@ -42,7 +42,7 @@ Build the docker image:
 docker build -t <whatever>/mugre-bot .
 ```
 
-Run in on background mode:
+Run it in on background mode:
 
 ```
 docker run -d -e MONGO_HOST='' -e MONGO_PORT='' -e MONGO_USERNAME='' -e MONGO_PASSWORD='' -e MONGO_DATABASE='' -e BOT_TOKEN='' <whatever>/mugre-bot
