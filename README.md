@@ -35,7 +35,6 @@ export BOT_TOKEN=''
 
 Export the file to set the variables and run the run.py file.
 
-
 ### Docker
 
 Build the docker image:
