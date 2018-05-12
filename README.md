@@ -10,7 +10,9 @@ The bot does things - M. Rajoy, 2018
 
 Bot created using pyTelegramBotAPI connected to a database in Mongo.
 
-## Getting Started
+## Getting started
+
+### Manual installation
 
 Install the requirements:
 
@@ -32,16 +34,18 @@ export BOT_TOKEN=''
 Export the file to set the variables and run the run.py file.
 
 
-# DOCKER
+### Docker
 
-Build the docker image
-
-```
-docker build -t eltrolado/mugre-bot .
-```
-
-Run the docker image
+Build the docker image:
 
 ```
-docker run -ti -e MONGO_HOST='' -e MONGO_PORT='' -e MONGO_USERNAME='' -e MONGO_PASSWORD='' -e MONGO_DATABASE='' -e BOT_TOKEN='' eltrolado/mugre-bot 
+docker build -t <whatever>/mugre-bot .
 ```
+
+Run in on background mode:
+
+```
+docker run -d -e MONGO_HOST='' -e MONGO_PORT='' -e MONGO_USERNAME='' -e MONGO_PASSWORD='' -e MONGO_DATABASE='' -e BOT_TOKEN='' <whatever>/mugre-bot
+```
+
+
