@@ -10,6 +10,10 @@ Bot created using pyTelegramBotAPI connected to a database in Mongo.
 
 ## Getting Started
 
+Install the requeriments:
+
+```pip3 install -r requeriments```
+
 Set your environment variables in the .env file.
 
 ```export MONGO_HOST='178.62.217.132'
