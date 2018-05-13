@@ -190,6 +190,13 @@ def dylanface(message):
     bot.send_photo(chat_id, photo=dylanface)
 
 
+@bot.message_handler(commands=['aboutme'])
+def dylanface(message):
+    chat_id = message.chat.id
+    text = 'Visítame en:\n\nhttps://github.com/dmonter/mugre-bot\n\nY dale a la <b>estrellita</b>, cabrón.'
+    bot.send_message(chat_id, text, parse_mode='HTML')
+
+
 # To add hardcoded images as /dylanface
 #@bot.message_handler(content_types='photo')
 @bot.message_handler(commands=['addimage'])
