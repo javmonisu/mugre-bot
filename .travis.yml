@@ -4,7 +4,11 @@ language: ruby
 
 services:
   - docker
-  
+
+branches:
+  only:
+    - master
+    
 before_script:
 - docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
 

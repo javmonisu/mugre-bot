@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/dmonter/mugre-bot.svg?branch=master)](https://travis-ci.org/dmonter/mugre-bot)
+Master Build Status: [![Build Status](https://travis-ci.org/dmonter/mugre-bot.svg?branch=master)](https://travis-ci.org/dmonter/mugre-bot)
 
 # @TheMugrestBot
 
@@ -34,7 +34,6 @@ export BOT_TOKEN=''
 ```
 
 Export the file to set the variables and run the run.py file.
-
 
 ### Docker
 
