@@ -1,28 +1,27 @@
-Master Build Status: [![Build Status](https://travis-ci.org/dmonter/mugre-bot.svg?branch=master)](https://travis-ci.org/dmonter/mugre-bot)
+# @TheMugrestBot [![Build Status](https://travis-ci.org/dmonter/mugre-bot.svg?branch=master)](https://travis-ci.org/dmonter/mugre-bot)
 
-# @TheMugrestBot
+A fancy telegram bot (using [pyTelegramBotAPI](https://github.com/eternnoir/pyTelegramBotAPI)) connected to a Mongo database. This repo autobuilds the master branch via Travis-CI and pushes it to Docker HUB.
 
-A fancy telegram bot.
-
-```
-The bot does things - M. Rajoy, 2018
-```
-
-## Basic information
-
-Bot created using pyTelegramBotAPI connected to a database in Mongo.
+> The bot does things - M. Rajoy, 2018
 
 ## Getting started
 
 ### Manual installation
 
+Create a virtual environment in your folder and activate it:
+
+```
+python -m venv venv
+source venv/bin/activate
+```
+
 Install the requirements:
 
 ```
-pip3 install -r requirements.txt
+pip install -r requirements.txt
 ```
 
-Set your environment variables in the .env file.
+Set your environment variables manually or using [autoenv](https://github.com/kennethreitz/autoenv) in the .env file.
 
 ```
 export MONGO_HOST=''
@@ -33,7 +32,10 @@ export MONGO_DATABASE=''
 export BOT_TOKEN=''
 ```
 
-Export the file to set the variables and run the run.py file.
+Run the bot:
+```
+python run.py
+```
 
 ### Docker
 
@@ -48,5 +50,3 @@ Run it in on background mode:
 ```
 docker run -d -e MONGO_HOST='' -e MONGO_PORT='' -e MONGO_USERNAME='' -e MONGO_PASSWORD='' -e MONGO_DATABASE='' -e BOT_TOKEN='' <whatever>/mugre-bot
 ```
-
-
