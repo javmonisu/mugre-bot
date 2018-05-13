@@ -2,7 +2,7 @@
 
 A fancy telegram bot (using [pyTelegramBotAPI](https://github.com/eternnoir/pyTelegramBotAPI)) connected to a Mongo database. This repo autobuilds the master branch via Travis-CI and pushes it to Docker HUB.
 
-> The bot does things - M. Rajoy, 2018
+> This bot does things - M. Rajoy, 2018
 
 ## Getting started
 
