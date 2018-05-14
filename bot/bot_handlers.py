@@ -22,7 +22,7 @@ def send_welcome(message):
 
 
 @bot.message_handler(commands=['help'])
-def send_welcome(message):
+def send_help(message):
     chat_id = message.chat.id
     text = help()
     bot.send_message(chat_id, text)
@@ -87,7 +87,7 @@ def get_doggo(message):
 
 
 @bot.message_handler(commands=['deldoggo'])
-def get_doggo(message):
+def del_doggo(message):
     chat_id = message.chat.id
     username = message.from_user.username
     if username in Dog().select(chat_id):
@@ -191,9 +191,16 @@ def dylanface(message):
 
 
 @bot.message_handler(commands=['aboutme'])
-def dylanface(message):
+def aboutme(message):
     chat_id = message.chat.id
     text = 'Visítame en:\n\nhttps://github.com/dmonter/mugre-bot\n\nY dale a la <b>estrellita</b>, cabrón.'
+    bot.send_message(chat_id, text, parse_mode='HTML')
+
+
+@bot.message_handler(commands=['pescado'])
+def pescado(message):
+    chat_id = message.chat.id
+    text = fishes()
     bot.send_message(chat_id, text, parse_mode='HTML')
 
 
@@ -205,10 +212,4 @@ def read_image(message):
     if chat_id == creator:
         bot.send_message(chat_id, message.photo)
 
-
-@bot.message_handler(commands=['pescado'])
-def read_image(message):
-    chat_id = message.chat.id
-    text = fishes()
-    bot.send_message(chat_id, text, parse_mode='HTML')
 
