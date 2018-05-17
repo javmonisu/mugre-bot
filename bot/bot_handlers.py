@@ -213,3 +213,14 @@ def read_image(message):
         bot.send_message(chat_id, message.photo)
 
 
+def handle_messages(messages):
+    hulio_list = ['en mi vida', 'en la vida', 'no se ni coger']
+    for message in messages:
+        if message.text is not None:
+            for hulio in hulio_list:
+                if hulio in message.text:
+                    bot.reply_to(message, 'hulio')
+
+
+bot.set_update_listener(handle_messages)
+
