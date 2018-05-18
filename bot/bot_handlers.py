@@ -6,6 +6,7 @@ from bot.polling import Bot
 from bot.general import Gif, Dog, Excel, empty_command, long_text, help
 from bot.fishes import fishes
 from os import environ
+import re
 
 # Bot TOKEN
 creator = 8143995
@@ -213,14 +214,14 @@ def read_image(message):
         bot.send_message(chat_id, message.photo)
 
 
+regex = re.compile('(\s(en)\s(la)?(tu)?(mi)?(su)?\svida(\.)?$|(\s)?no\sse\sni\scoger\s)', re.IGNORECASE)
+
+
 def handle_messages(messages):
-    hulio_list = ['en mi vida', 'en la vida', 'en tu vida', 'no se ni coger']
     for message in messages:
         if message.text is not None:
-            for hulio in hulio_list:
-                if hulio in message.text:
+            if re.search(regex, message.text) is not None:
                     bot.reply_to(message, 'hulio')
-                    break
 
 
 bot.set_update_listener(handle_messages)
