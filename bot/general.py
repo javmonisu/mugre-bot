@@ -113,3 +113,11 @@ def long_text():
             'tontetia tuya de niño pequeño malcriado vaya a peores.'
     )
     return text
+
+
+def daimi():
+    text = ('Bua tts la q me espera hoy XD vaya q estaba repasando inventario del bar '
+            'y resulta q nos faltan unas cajas de alhambra total que pensamos q ha sido '
+            'uno de los nuevos q tiene pinta de gitano ggwp vaya que no se echarlo ya o '
+            'esperarme a que se le acabe el contrato tts ayudadme')
+    return text

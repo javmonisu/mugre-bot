@@ -3,7 +3,7 @@ Bot message handlers.
 """
 from random import randint
 from bot.polling import Bot
-from bot.general import Gif, Dog, Excel, empty_command, long_text, help
+from bot.general import Gif, Dog, Excel, empty_command, long_text, help, daimi
 from bot.fishes import fishes
 from os import environ
 import re
@@ -212,6 +212,13 @@ def read_image(message):
     chat_id = message.chat.id
     if chat_id == creator:
         bot.send_message(chat_id, message.photo)
+
+
+@bot.message_handler(commands=['tts'])
+def animally(message):
+    chat_id = message.chat.id
+    text = daimi()
+    bot.send_message(chat_id, text)
 
 
 regex = re.compile('(\s(en)\s(la)?(tu)?(mi)?(su)?\svida(\.)?$|(\s)?no\sse\sni\scoger\s)', re.IGNORECASE)
