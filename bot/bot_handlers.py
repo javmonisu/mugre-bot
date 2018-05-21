@@ -231,7 +231,7 @@ def word(message):
         bot.send_message(chat_id, text)
 
 
-regex = re.compile('(\s(en)\s(la)?(tu)?(mi)?(su)?\svida(\.)?$|(\s)?no\sse\sni\scoger\s)', re.IGNORECASE)
+regex = re.compile('(\s(en)\s(la)?(tu)?(mi)?(su)?\svida(\.)?$|(\s)?no\ss([eé])\sni\scoger\s)', re.IGNORECASE)
 
 
 def handle_messages(messages):
