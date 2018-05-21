@@ -3,6 +3,10 @@ Classes for reading & writing to the database.
 """
 from database.mongo import db
 from random import choice
+from os import environ
+import requests
+
+WEATHER_KEY = str(environ['WEATHER_KEY'])
 
 
 def empty_command(text):
@@ -20,7 +24,8 @@ def help():
             '/deldoggo - Te borro de la lista de doggerfags\n'
             '/dylanface - Dylanface\n'
             '/google - (texto) Busco (texto) en google. También funciona citando\n'
-            '/word - (texto) link a la palabra en WR. Por defecto palabra aleatoria\n'
+            '/word - (texto) Link a la palabra en WR. Por defecto palabra aleatoria\n'
+            '/tiempo - (ciudad) El Tiempo TM\n'
             '/aboutme - Visítame en GitHub\n'
             '/gif - Envío un gif aleatorio\n'
             '/animally - Muestro un tocho milenario\n'
@@ -120,4 +125,22 @@ def daimi():
             'y resulta q nos faltan unas cajas de alhambra total que pensamos q ha sido '
             'uno de los nuevos q tiene pinta de gitano ggwp vaya que no se echarlo ya o '
             'esperarme a que se le acabe el contrato tts ayudadme')
+    return text
+
+
+def get_weather(city):
+    url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=metric&appid={}'.format(city, WEATHER_KEY)
+    response = requests.get(url)
+    if response.status_code == 200:
+        try:
+            weather_data = response.json()
+            description = weather_data['weather'][0]['description']
+            temp = weather_data['main']['temp']
+            text = ('City: {}\n'
+                    'Temperature: {:.1f} ºC\n'
+                    'Weather: {}'.format(city, float(temp), description))
+        except Exception as e:
+            text = 'Algo fue mal. Prueba más tarde.'
+    else:
+        text = 'No me mandes buscar mierdas...'
     return text
