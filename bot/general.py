@@ -138,7 +138,9 @@ def get_weather(city):
             temp = weather_data['main']['temp']
             text = ('City: {}\n'
                     'Temperature: {:.1f} ºC\n'
-                    'Weather: {}'.format(city, float(temp), description))
+                    'Weather: {}'.format(weather_data['name'] + ', ' + weather_data['sys']['country'],
+                                         float(temp),
+                                         description))
         except Exception as e:
             text = 'Algo fue mal. Prueba más tarde.'
     else:
