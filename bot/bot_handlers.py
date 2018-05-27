@@ -232,13 +232,21 @@ def word(message):
 
 
 regex = re.compile('(\s(en)\s(la)?(tu)?(mi)?(su)?\svida(\.)?$|(\s)?no\ss([eé])\sni\scoger\s)', re.IGNORECASE)
-
+regex_no_pelo = re.compile('(?=(.*no|.*sin))(?=(.*lava(d)?o|.*lavar|.*lavarme))(?=.*pelo)', re.IGNORECASE)
+regex_pelo = re.compile('(?=(.*lava(d)?o|.*lavar|.*lavarme))(?=.*pelo)', re.IGNORECASE)
 
 def handle_messages(messages):
     for message in messages:
         if message.text is not None:
+            # hulio
             if re.search(regex, message.text) is not None:
                     bot.reply_to(message, 'hulio')
+            # reformed
+            if message.from_user.id == 9617988:
+                if re.search(regex_no_pelo, message.text) is not None:
+                    bot.reply_to(message, 'not reformed')
+                elif re.search(regex_pelo, message.text) is not None:
+                    bot.reply_to(message, 'reformed')
 
 
 bot.set_update_listener(handle_messages)
